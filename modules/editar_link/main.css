@@ -9,6 +9,16 @@ body{
     height: 500px;
     border-radius: 2%;
 }
+#imgSalida{
+    border-radius: 50%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+.navbar{
+
+    background-color: rgb(61, 142, 212); 
+    margin-right: 12px;
+}
 #link_editar1{
     /* background-color: rgb(27, 209, 97); */
 }
