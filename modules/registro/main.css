@@ -6,8 +6,8 @@ body{
     padding-top: 20px;
     background-color: rgba(99, 228, 48, 0.424);
     width: 600px;
-    height: 290px;
-    border-radius: 1%;
+    height: 370px;
+    border-radius: 5%;
 }
 #box_login1{
     /* background-color: rgb(27, 209, 97); */
