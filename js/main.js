@@ -1,3 +1,16 @@
+var confValidation = {
+    framework: 'bootstrap',
+    excluded: [':disabled', ':hidden', ':not(:visible)'],
+    locale: 'es_ES',
+    icon: {
+        valid: 'zmdi zmdi-check',
+        validating: 'zmdi zmdi-close'
+    },
+    row: {
+        valid: 'field-success',
+        invalid: 'field-error'
+    }
+};
 let sesion = function(params) {
     console.log(`llamado por ${params.modulo}`);
     let ejecutar = function(result) {
