@@ -5,8 +5,8 @@ body{
     margin-top: 100px;
     padding-top: 40px;
     background-color: rgba(30, 0, 197, 0.103);
-    width: 800px;
-    height: 500px;
+    /*idth: 800px;
+    height: 500px; */
     border-radius: 2%;
 }
 #imgSalida{
