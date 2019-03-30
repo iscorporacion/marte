@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/fv/formValidation.min.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Poli-links</title>
+</head>
+
+<body>
+    <div class="container" id="box_login">
+        <div class="row col s12">
+            <div class="col s2">
+                <div class="preview-icono text-center">
+
+                </div>
+            </div>
+            <div class="col s4" id="box_login1">
+                <form id="frm_crear_link" class="col s12" method="POST">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Icono</label>
+                            <input type="text" class="form-control" name="icono" required autofocus>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="text" class="validate" name="titulo">
+                            <label><i class="fa fa-key" aria-required="false" aria-hidden="true"></i>
+                                Titulo</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="text" class="validate" name="url">
+                            <label for="first_name"> <i class="fa fa-user-circle" aria-required="false"
+                                    aria-hidden="true"> </i>
+                                Url</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="text" class="validate" name="descripcion">
+                            <label><i class="fa fa-key" aria-required="false" aria-hidden="true"></i>
+                                Descripcion</label>
+                        </div>
+                    </div>
+                    <div id="box_login3" class="row">
+                        <button type="submit" class="waves-effect waves-light btn-small"><i class="fa fa-plus"></i>
+                            Registrarse</button>
+                        <a href="#" class="waves-effect waves-light btn-small"><i class="fa fa-sign-in"></i>
+                            Ingresar</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col s6" id="box_login2">
+                <div><i id="box_logo" class="fa fa-grav" aria-hidden="true"></i></div>
+                <div>
+                    <h5 class="center">Poli link</h5>
+                    <h6 class="center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum officia id corporis
+                        ex magnam quasi iste, iusto, quas fug!</h6>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script src="../../lib/popper.js/popper.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../lib/fv/formValidation.min.js"></script>
+    <script src="../../lib/fv/bootstrap.min.js"></script>
+    <script src="../../lib/fv/es_ES.js"></script>
+    <script src="../../lib/sweetalert2@8.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="functions.js"></script>
+</body>
+
+</html>
