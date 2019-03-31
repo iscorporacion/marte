@@ -1,4 +1,4 @@
-var confValidation = {
+/*var confValidation = {
     framework: 'bootstrap',
     excluded: [':disabled', ':hidden', ':not(:visible)'],
     locale: 'es_ES',
@@ -26,7 +26,7 @@ let sesion = function(params) {
         result['accion'] = ejecutar;
         errorManager(result);
     },"json");
-}
+}*/
 
 let mensaje = function(params) {
     if (params.error) {
