@@ -56,3 +56,22 @@ let errorManager = function(params) {
             mensaje("Error desconocido");
     }
 }
+
+let solicitud = function (params) { 
+    $.ajax({
+        url: params.url,
+        type: params.type || "POST",
+        dataType: "json",
+        data: params.data,
+        contentType: false,
+        cache: false,
+        processData: false,
+        mineType: "multipart/form-data",
+        beforeSend: function (param) {
+
+        },
+        success: function (result) {
+            errorManager(result);
+        }
+    })
+}
