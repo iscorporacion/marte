@@ -5,20 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- librerias -->
+    <link id="page-icon" rel="shortcut icon" href="img/favicon/favicon.ico">
     <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="lib/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="lib/mdb/css/re-mdb.min.css">
+    <link rel="stylesheet" href="lib/fv/formValidation.min.css">
+    <link rel="stylesheet" href="css/colores.css">
     <link rel="stylesheet" href="css/global.css">
+    <!-- fin librerias -->
+    <!-- css del modulo -->
     <link rel="stylesheet" href="css/main.css">
-    <title>Mys link</title>
+    <!-- fin css del modulo -->
+    <title class="appName">Mis Links</title>
 </head>
 
-<body>
-   
+<body class="blue-gradient">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-center align-items-center minh-100">
+                <div class="mx-auto">
+                    <a class="logo mx-auto">
+                        <div class="row">
+                            <div class="mx-auto">
+                                <img src="img/logo.png" class="white logo-lg mb-4" alt="">
+                                <span class="logo-app white-text col-xs-6 btn-block text-center appName appName">Mis
+                                    Links</span>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="white-text text-center">
+                        Un lugar para tus favoritos, un proyecto de clase<br><i
+                                class="fas fa-heart icon-md red-text"></i>
+                    </p>
+                    <a href="modules/registro/" class="btn peach-gradient">Crear una Cuenta</a>
+                    <a href="modules/login/" class="btn blue-gradient">Ingresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- no tocar es el loader y logo-->
+    <div class="social">
+        <a href="https://github.com/iscorporacion/marte" class="btn-floating white" data-toggle="tooltip"
+            title="Visitanos en GitHub" data-placement="left"><i class="fab fa-github black-text icon-md"></i></a>
+    </div>
+    <div class="page-loader">
+        <div class="progress rounded-0 d-none" style="height: 10px;" id="loaderBar">
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+        <div class="boxCenter">
+            <div class="col-md-12 text-center m-t-20 m-b-20">
+                <div class="boxText">
+                    <div class="appName"><a class="loader-logo">
+                            <img src="img/logo.png" alt="">
+                        </a></div>
+                    <div class="spinner-border blue-text" style="width: 6rem; height: 6rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="porcen c1 p-t-10 f-700 loader-porcent"></div>
+            <span class="col-md-12 f-500 loader-msg">Por favor espera...!</span>
+        </div>
+    </div>
+    <!-- final loader y logo-->
+
+    <!-- librerias -->
     <script src="lib/jquery-3.3.1.min.js"></script>
-    <script src="lib/materialize/js/materialize.min.js"></script>
-    <script src="lib/sweetalert2@8.js"></script>
+    <script src="lib/popper.js/popper.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/mdb/js/mdb.min.js"></script>
+    <script src="lib/fv/formValidation.min.js"></script>
+    <script src="lib/fv/bootstrap.min.js"></script>
+    <script src="lib/fv/es_ES.js"></script>
+    <script src="lib/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- fin librerias -->
+
+    <!-- funciones del modulo -->
     <script src="js/functions.js"></script>
+    <!-- fin funciones del modulo -->
+
 </body>
 
 </html>

@@ -5,13 +5,14 @@
 	$pass = "Semestre7*2019";
 	$bd = "myLinks";
 	$conn = @new mysqli($host,$user,$pass,$bd);
-	function json($error,$type,$message,$data=array()){
+	function json($error,$type,$message,$data=array(),$url=""){
         $json = json_encode(
             array(
                 "error"=>$error,
                 "type"=>$type,
                 "message"=>$message,
-                "rows"=>$data
+                "rows"=>$data,
+                "url"=>$url
             )
         );
         return $json;
