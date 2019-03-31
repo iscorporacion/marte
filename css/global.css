@@ -78,7 +78,7 @@ html .page-loader {
     position: relative;
     display: inline-flex;
 }
-.boxCenter .appName {
+.boxCenter .appLogo {
     position: absolute;
     top: 50%;
     width: 100%;
