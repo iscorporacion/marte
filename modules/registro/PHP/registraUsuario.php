@@ -6,7 +6,7 @@
         // echo json(200,"success","Conexión establecida");
         $nombre = $_POST["nombre"];
         $email = $_POST["email"];
-        $contra = $_POST["contra"];
+        $contra = MD5($_POST["contra"]);
         $sql = "INSERT INTO usuario (nombre,email,contra) VALUES ('$nombre','$email','$contra')";
         if($conn->query($sql) === TRUE){
             echo json(200,"success","Usuario Registrado");
