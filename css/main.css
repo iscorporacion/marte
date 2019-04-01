@@ -5,11 +5,7 @@
 .mt-20{
     margin-top: 10rem;
 }
-.bg-app{
-    background: #8E2DE2;
-    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
-    background: linear-gradient(to right, #4A00E0, #8E2DE2);
-}
+
 .home-float{
     position: absolute;
     top: 10px;
