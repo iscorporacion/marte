@@ -113,6 +113,10 @@ body {
     text-overflow: ellipsis;
     text-align: center;
 }
+.descripcion{
+    margin: 10px;
+    text-align: justify;
+}
 
 #titulo_card_container{
     text-align: left;
@@ -160,6 +164,18 @@ body {
 .panel-blue {
     color: #ffffff;
     background-color: #03A9F4;
+}
+
+.btn_editar{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.btn_borrar{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 
 .panel-red.userlist .username, .panel-green.userlist .username, .panel-yellow.userlist .username, .panel-blue.userlist .username {
