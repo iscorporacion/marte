@@ -1,0 +1,42 @@
+$(document).ready(async function () {
+    await sesion({ href: false, loaderStop:true });
+    async function hacer(result, params) {
+        let data = await result.rows;
+        if (data.length) {
+            data = await data.map(function (link, i) {
+                return `
+                    <div class="col-md-2 p-2">
+                        <div class="card card-block ${data.length > 6 ? "h-100" : ""}">
+                            <div class="card-body">
+                                <span class="card-title blue-text"><img class="pb-1" src="http://www.google.com/s2/favicons?domain=${link.url}"> ${link.titulo}</span>
+                                <hr>
+                                <p class="card-text text-justify">${link.descripcion}</p>
+                                <a href="${link.url}" target="_blank" class="px-2 fa-lg li-ic"><i class="fas fa-share-alt"></i> Ir</a>
+                                <a class="px-2 fa-lg tw-ic pull-right"><i class="fas fa-trash red-text"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            });
+            await $(".mislinks").empty().append(data);
+            await $(".mislinks").getNiceScroll().resize();
+            await loader("close");
+        }
+    }
+    await solicitud({
+        url: "PHP/listarLinks.php",
+        loader: "Cargando links...!",
+        ejecutar: hacer, /*quitar si no quiere que ejecute una función después de terminar*/
+        loaderStop:true
+    });
+    $(".mislinks").niceScroll({
+        cursorcolor: 'rgba(194, 194, 194, 1)',
+        cursorborder: 0,
+        cursorborderradius: 0,
+        cursorwidth: "5px",
+        bouncescroll: true,
+        mousescrollstep: 100,
+        autohidemode: true
+    });
+
+});

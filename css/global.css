@@ -1,24 +1,34 @@
-.bg-app{
+.bg-app {
     background: #8E2DE2 !important;
     background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2) !important;
     background: linear-gradient(to right, #4A00E0, #8E2DE2) !important;
     /* color: white; */
 }
-.form-control, 
-.btn, 
-.swal2-popup, 
-.card, 
-.custom-file-label, 
-.custom-file-label::after,
-.input-group-text,
-.modal-header {
+@media (max-width: 992px) {
+    .navbar {
+        position: absolute;
+    }
+
+}
+
+.form-control, .btn, .swal2-popup, .card, .custom-file-label, .custom-file-label::after, .input-group-text, .modal-header {
     /* border-radius: 0; */
+}
+.card{
+    /* background: rgba(255, 255, 255, 0.8) !important; */
+}
+.mislinks {
+    margin-top: 100px;
+    height: 80vh;
+    /* overflow-y: scroll; */
+    background: transparent;
 }
 .minh-100 {
     height: 100vh;
     margin: 0;
     padding: 0;
 }
+
 .help-block {
     color: red;
 }
@@ -26,34 +36,41 @@
 .field-success {
     color: green;
 }
-.input{
+
+.input {
     color: #495057;
     background-color: #fff !important;
-
 }
+
 .md-form.md-outline {
     position: relative;
     margin-top: 1.5rem;
-    margin-bottom: 1.5rem;    
+    margin-bottom: 1.5rem;
 }
-.preview-icono{
+
+.preview-icono {
     position: absolute;
     top: 5px;
     right: 5px;
     cursor: pointer;
     transition: all .2s ease-in-out;
 }
-.preview-icono:hover{
-    transform: scale(4 , 4);
+
+.preview-icono:hover {
+    transform: scale(4, 4);
 }
+
 .form-group {
     margin-bottom: 5px !important;
 }
+
 .card-footer {
     background-color: #fff;
     border-top: none;
 }
+
 /* no tocar es loader */
+
 html .page-loader {
     background: #fff;
     position: fixed;
@@ -63,6 +80,7 @@ html .page-loader {
     left: 0;
     z-index: 50000000;
 }
+
 .boxCenter {
     position: absolute;
     left: 50%;
@@ -72,59 +90,87 @@ html .page-loader {
     margin: -100px 0 0 -200px;
     text-align: center;
 }
+
 .boxCenter .boxText {
     height: 75px;
     margin: 0 auto;
     position: relative;
     display: inline-flex;
 }
+
 .boxCenter .appLogo {
     position: absolute;
     top: 50%;
     width: 100%;
 }
-.loader-logo{
+
+.loader-logo {
     width: 100%;
 }
+
 .loader-logo img {
     width: 60px;
     top: -17px;
     position: relative;
 }
+
 /* termina loader */
 
 /* logo */
 
-.container-logo{
+.container-logo {
     position: fixed;
     top: 10px;
     width: 100%;
     margin-left: 20px;
     z-index: 500;
 }
-.logo .logo-app{
-    font-weight: bold;
+
+.logo .logo-app {
+    font-size: 1rem;
     text-transform: uppercase;
 }
-.logo img{
+
+.logo img {
     width: 60px;
     border-radius: 50%;
     padding: 5px;
     transition: all .2s ease-in-out;
+    animation-delay: 3s;
+    animation-duration: .5s;
+    animation-iteration-count: 2;
+    animation-name: slidein;
 }
-.logo img.logo-lg{
+
+.logo img.logo-lg {
     width: 150px;
 }
-.logo img:hover{
-    transform: scale(1.2 , 1.2);
+
+.logo img:hover {
+    transform: scale(1.2, 1.2);
 }
-.social{
+
+.logo .usuario{
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+}
+.navbar .navbar-brand img {
+    height: 60px;
+}
+.social {
     position: fixed;
     right: 20px;
     top: 20px;
 }
-.icon-md{
-    font-size: 2rem;
+
+.icon-md {
+    font-size: 2rem !important;
+}
+.amor{
+    animation-delay: 5s;
+    animation-duration: .5s;
+    animation-iteration-count: 2;
+    animation-name: slidein;
 }
 /* .social a{
     transition: all .2s ease-in-out;
@@ -132,4 +178,17 @@ html .page-loader {
 .social a:hover{
     transform: scale(1.2 , 1.2);
 } */
+
 /* fin logo */
+
+@keyframes slidein {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
