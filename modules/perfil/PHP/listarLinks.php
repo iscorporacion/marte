@@ -15,7 +15,7 @@
                 }
                 echo json(202,"success","Lista de links",$link);
             }else{
-                echo json(204,"warning","No hay links registrados");
+                echo json(201,"warning","No hay links registrados");
             }
         }else{
             echo json(201,"error",'No has iniciado sesión',[],"/modules/login");

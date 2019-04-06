@@ -3,11 +3,14 @@ $(document).ready(function () {
         $(".preview-icono").html(`<i class="${$(this).val()}" aria-hidden="true"></i>`);
     });
     function hacer(result, params) {
-        // result = resultado de la petición
-        // params = parametros de la petición
-        $("#frm_crear_link")[0].reset();
-        $("#frm_crear_link").formValidation('resetForm', true);
-        $("[name=icono]").focus();
+        if (result.error == 200) {
+            $("#frm_crear_link")[0].reset();
+            $("#frm_crear_link").formValidation('resetForm', true);
+            $("[name=icono]").focus();
+        } else {
+            $('[name=titulo]').focus();
+        }
+
     }
     sesion({ href: false });
     $("#frm_crear_link").formValidation(confValidation)
@@ -16,9 +19,9 @@ $(document).ready(function () {
             solicitud({
                 url: "PHP/create.php",
                 data: new FormData(this),
-                loader: "Cargando...!",
-                ejecutar: hacer /*quitar si no quiere que ejecute una función después de terminar*/
+                loader: "Guardando link...!",
+                ejecutar: hacer 
             });
         });
-    
+
 });
