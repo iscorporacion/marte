@@ -1,0 +1,14 @@
+.h100, body{
+    height: 100vh;
+    
+}
+.mt-20{
+    margin-top: 10rem;
+}
+
+.home-float{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- librerias -->
+    <link id="page-icon" rel="shortcut icon" href="../../img/favicon/favicon.ico">
+    <link rel="stylesheet" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../../css/animate.min.css">
+    <link rel="stylesheet" href="../../lib/mdb/css/re-mdb.min.css">
+    <link rel="stylesheet" href="../../lib/fv/formValidation.min.css">
+    <link rel="stylesheet" href="../../css/colores.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <!-- fin librerias -->
+    <!-- css del modulo -->
+    <link rel="stylesheet" href="main.css">
+    <!-- fin css del modulo -->
+    <title class="appName">Mis Links</title>
+</head>
+
+<body class="blue-gradient">
+    <nav class="mb-1 navbar navbar-expand-lg fixed-top shadow-none white-text">
+        <a href="/modules/perfil/" class="navbar-brand">
+            <div class="logo">
+                <img src="../../img/logo.png" class="white d-inline-block align-middle" alt="">
+                <div class="p-2 pt-2 d-inline-block align-middle">
+                    <span class="logo-app white-text font-weight-bold col-xs-6 appName">Mis Links</span>
+                    <small class="btn-block white-text usuario"></small>
+                </div>
+            </div>
+        </a>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item">
+                <a href="/modules/crear_link" class="nav-link white-text waves-effect waves-light" data-toggle="tooltip"
+                    title="Agregar link" data-placement="top">
+                    <i class="fas fa-plus icon-md"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/PHP/cerrarSesion.php" class="nav-link white-text waves-effect waves-light"
+                    data-toggle="tooltip" title="Cerrar Sesión" data-placement="top">
+                    <i class="far fa-times-circle icon-md"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="container-fluid ">
+            <div class="row justify-content-center align-items-center minh-100">
+                <div class="col-md-12 mx-auto ">
+                    <div class="align-middle mislinks shadow-none row flex-row">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- no tocar es el loader y logo-->
+    <div class="page-loader">
+        <div class="progress rounded-0 d-none" style="height: 10px;" id="loaderBar">
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+        <div class="boxCenter">
+            <div class="col-md-12 text-center m-t-20 m-b-20">
+                <div class="boxText">
+                    <div class="appLogo"><a class="loader-logo">
+                            <img src="../../img/logo.png" alt="">
+                        </a></div>
+                    <div class="spinner-border blue-text" style="width: 6rem; height: 6rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="porcen c1 p-t-10 f-700 loader-porcent"></div>
+            <span class="col-md-12 f-500 loader-msg">Por favor espera...!</span>
+        </div>
+    </div>
+    <!-- final loader y logo-->
+
+    <!-- librerias -->
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script src="../../lib/jquery.nicescroll.min.js"></script>
+    <script src="../../lib/popper.js/popper.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../lib/mdb/js/mdb.min.js"></script>
+    <script src="../../lib/fv/formValidation.min.js"></script>
+    <script src="../../lib/fv/bootstrap.min.js"></script>
+    <script src="../../lib/fv/es_ES.js"></script>
+    <script src="../../lib/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <!-- fin librerias -->
+
+    <!-- funciones del modulo -->
+    <script src="functions.js"></script>
+    <!-- fin funciones del modulo -->
+
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Perfiles</title>
+</head>
+
+<body>
+    <div class="barra_encabezado">
+        <div class="row">
+            <div class="avatar col s2 m1">
+                <i><img id="avatar" src="/img/graduado.jpg" alt=""></i>
+            </div>
+            <div class="info_usu col s2 m3">
+                <div class="row text_info">
+                    <h6>
+                        Nombre De Usuario
+                    </h6>
+                    <h6>
+                        Correo Electronico
+                    </h6>
+                </div>
+            </div>
+            <div class="col s8 m6">
+
+            </div>
+            <div class="boton_crear_link col s2 m2">
+                <a class="btn-floating btn-large waves-effect waves-light blue card_buttons"><i
+                        class="fa fa-plus"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="titulo_card_container">Mas Links</div>
+    <div class="container">
+        <div class="row">
+            <div class="col s10 m3">
+                <div class="panel panel-default userlist">
+                    <div class="panel-body text-center">
+                        <div class="perfil_usuarios">
+                            <div class="usuariopic"> <img src="/img/3.png" alt="" class="usuariopicimg"> </div>
+                            <h2 class="usuarionombre">Titulo Link</h2>
+                            <div class="usuariourl"><a href="#">Presioname</a></div>
+                            <div class="titulo_descripcion">Descripción</div>
+                            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                tincidunt est vitae
+                                ultrices accumsan. Aliquam ornare lacus adipiscing, posuere.<br>
+                                <br>
+                                <div>
+                                    <button type="button" class="btn blue btn_editar">Editar</button>
+                                    <button type="button" class="btn blue btn_borrar">Borrar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s10 m3">
+                <div class="panel panel-default userlist">
+                    <div class="panel-body text-center">
+                        <div class="perfil_usuarios">
+                            <div class="usuariopic"> <img src="/img/2.png" alt="" class="usuariopicimg"> </div>
+                            <h2 class="usuarionombre center">Titulo Link</h2>
+                            <div class="usuariourl"><a href="#">Presioname</a></div>
+                            <div class="titulo_descripcion">Descripción</div>
+                            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                tincidunt est vitae
+                                ultrices accumsan. Aliquam ornare lacus adipiscing, posuere.<br>
+                                <br>
+                                <div>
+                                    <button type="button" class="btn blue btn_editar">Editar</button>
+                                    <button type="button" class="btn blue btn_borrar">Borrar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s10 m3">
+                <div class="panel panel-default userlist">
+                    <div class="panel-body text-center">
+                        <div class="perfil_usuarios">
+                            <div class="usuariopic"> <img src="/img/4.png" alt="" class="usuariopicimg"> </div>
+                            <h2 class="usuarionombre center">Titulo Link</h2>
+                            <div class="usuariourl"><a href="#">Presioname</a></div>
+                            <div class="titulo_descripcion">Descripción</div>
+                            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                tincidunt est vitae
+                                ultrices accumsan. Aliquam ornare lacus adipiscing, posuere.<br>
+                                <br>
+                                <div>
+                                    <button type="button" class="btn blue btn_editar">Editar</button>
+                                    <button type="button" class="btn blue btn_borrar">Borrar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s10 m3">
+                <div class="panel panel-default userlist">
+                    <div class="panel-body text-center">
+                        <div class="perfil_usuarios">
+                            <div class="usuariopic"> <img src="/img/5.png" alt="" class="usuariopicimg"> </div>
+                            <h2 class="usuarionombre center">Titulo Link</h2>
+                            <div class="usuariourl"><a href="#">Presioname</a></div>
+                            <div class="titulo_descripcion">Descripción</div>
+                            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                tincidunt est vitae
+                                ultrices accumsan. Aliquam ornare lacus adipiscing, posuere.<br>
+                                <br>
+                                <div>
+                                    <button type="button" class="btn blue btn_editar">Editar</button>
+                                    <button type="button" class="btn blue btn_borrar">Borrar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s10 m3">
+                <div class="panel panel-default userlist">
+                    <div class="panel-body text-center">
+                        <div class="perfil_usuarios">
+                            <div class="usuariopic"> <img src="/img/2.png" alt="" class="usuariopicimg"> </div>
+                            <h2 class="usuarionombre center">Titulo Link</h2>
+                            <div class="usuariourl"><a href="#">Presioname</a></div>
+                            <div class="titulo_descripcion">Descripción</div>
+                            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                tincidunt est vitae
+                                ultrices accumsan. Aliquam ornare lacus adipiscing, posuere.<br>
+                                <br>
+                                <div>
+                                    <button type="button" class="btn blue btn_editar">Editar</button>
+                                    <button type="button" class="btn blue btn_borrar">Borrar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s10 m3">
+                <div class="panel panel-danger userlist">
+                    <div class="panel-body text-center">
+                        <div class="perfil_usuarios">
+                            <div class="usuariopic"> <img src="/img/3.png" alt="" class="usuariopicimg"> </div>
+                            <h2 class="usuarionombre center">Titulo Link</h2>
+                            <div class="usuariourl"><a href="#">Presioname</a></div>
+                            <div class="titulo_descripcion">Descripción</div>
+                            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                tincidunt est vitae
+                                ultrices accumsan. Aliquam ornare lacus adipiscing, posuere.<br>
+                                <br>
+                                <div>
+                                    <button type="button" class="btn blue btn_editar">Editar</button>
+                                    <button type="button" class="btn blue btn_borrar">Borrar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s10 m3">
+                <div class="panel panel-default userlist">
+                    <div class="panel-body text-center">
+                        <div class="perfil_usuarios">
+                            <div class="usuariopic"> <img src="/img/5.png" alt="" class="usuariopicimg"> </div>
+                            <h2 class="usuarionombre center">Titulo Link</h2>
+                            <div class="usuariourl"><a href="#">Presioname</a></div>
+                            <div class="titulo_descripcion">Descripción</div>
+                            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                tincidunt est vitae
+                                ultrices accumsan. Aliquam ornare lacus adipiscing, posuere.<br>
+                                <br>
+                                <div>
+                                    <button type="button" class="btn blue btn_editar">Editar</button>
+                                    <button type="button" class="btn blue btn_borrar">Borrar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s10 m3">
+                <div class="panel panel-default userlist">
+                    <div class="panel-body text-center">
+                        <div class="perfil_usuarios">
+                            <div class="usuariopic"> <img src="/img/5.png" alt="" class="usuariopicimg"> </div>
+                            <h2 class="usuarionombre center">Titulo Link</h2>
+                            <div class="usuariourl"><a href="#">Presioname</a></div>
+                            <div class="titulo_descripcion">Descripción</div>
+                            <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                tincidunt est vitae
+                                ultrices accumsan. Aliquam ornare lacus adipiscing, posuere.<br>
+                                <br>
+                                <div>
+                                    <button type="button" class="btn blue btn_editar">Editar</button>
+                                    <button type="button" class="btn blue btn_borrar">Borrar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/lib/jquery-3.3.1.min.js"></script>
+    <script src="/lib/materialize/js/materialize.min.js"></script>
+    <script src="/lib/sweetalert2@8.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="functions.js"></script>
+</body>
+
+</html> -->

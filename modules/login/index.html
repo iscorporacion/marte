@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- librerias -->
+    <link id="page-icon" rel="shortcut icon" href="../../img/favicon/favicon.ico">
+    <link rel="stylesheet" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../../css/animate.min.css">
+    <link rel="stylesheet" href="../../lib/mdb/css/re-mdb.min.css">
+    <link rel="stylesheet" href="../../lib/fv/formValidation.min.css">
+    <link rel="stylesheet" href="../../css/colores.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <!-- fin librerias -->
+    <!-- css del modulo -->
+    <link rel="stylesheet" href="main.css">
+    <!-- fin css del modulo -->
+    <title class="appName">Mis Links</title>
+</head>
+
+<body class="blue-gradient">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-center align-items-center minh-100">
+                <div class="col-md-4 mx-auto ">
+                    <div class="card align-middle">
+                        <h5 class="card-title text-center text-upercase pt-2 font-weight-bold">Ingresar a mi cuenta</h5>
+                        <div class="card-body">
+                            <form id="validarUsuario" action="PHP/validarUsuario.php" method="post"
+                                autocomplete="off">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group md-form">
+                                            <label class="control-label">Correo Electrónico (*)</label>
+                                            <input type="email" name="email" placeholder=" " class="form-control"
+                                                required autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group md-form">
+                                            <label class="control-label">Contraseña (*)</label>
+                                            <input type="password" name="contra" placeholder="  "
+                                                class="form-control" required>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group pt-4">
+                                    <button type="submit" class="btn blue-gradient float-right">Entrar</button>
+                                    <a href="../registro/" class="btn btn-danger card-link">Registrarme</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">(*) Campos requeridos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- no tocar es el loader y logo-->
+    <div class="container-logo">
+        <a href="/" class="logo">
+            <div class="row">
+                <div class="ml-2">
+                    <img src="../../img/logo.png" class="col-xs-6 white" alt="">
+                </div>
+                <div class="p-2 pt-3">
+                    <span class="logo-app white-text col-xs-6 appName">Mis Links</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="page-loader">
+        <div class="progress rounded-0 d-none" style="height: 10px;" id="loaderBar">
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+        <div class="boxCenter">
+            <div class="col-md-12 text-center m-t-20 m-b-20">
+                <div class="boxText">
+                    <div class="appLogo"><a class="loader-logo">
+                            <img src="../../img/logo.png" alt="">
+                        </a></div>
+                    <div class="spinner-border blue-text" style="width: 6rem; height: 6rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="porcen c1 p-t-10 f-700 loader-porcent"></div>
+            <span class="col-md-12 f-500 loader-msg">Por favor espera...!</span>
+        </div>
+    </div>
+    <!-- final loader y logo-->
+
+    <!-- librerias -->
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script src="../../lib/popper.js/popper.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../lib/mdb/js/mdb.min.js"></script>
+    <script src="../../lib/fv/formValidation.min.js"></script>
+    <script src="../../lib/fv/bootstrap.min.js"></script>
+    <script src="../../lib/fv/es_ES.js"></script>
+    <script src="../../lib/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <!-- fin librerias -->
+
+    <!-- funciones del modulo -->
+    <script src="functions.js"></script>
+    <!-- fin funciones del modulo -->
+
+</body>
+
+</html>
