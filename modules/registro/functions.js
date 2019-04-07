@@ -1,7 +1,7 @@
 
-function hacer(params,result) { 
-    // params = parametros de la petición
+function hacer(result,params) { 
     // result = resultado de la petición
+    // params = parametros de la petición
     // $("#agregarUsuario")[0].reset();
     // $('[name=email]').focus();
     if(result.error == 200){
@@ -20,3 +20,4 @@ $("#agregarUsuario").formValidation(confValidation)
             ejecutar:hacer /*quitar si no quiere que ejecute una función después de terminar*/ 
         });
     });
+    sesion({href:true});
