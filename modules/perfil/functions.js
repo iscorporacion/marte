@@ -7,7 +7,7 @@ $(document).ready(async function () {
             loaderStop:true
         });        
     }
-    await sesion({ href: false, loaderStop:true });
+    await sesion({ href: true, loaderStop:true });
     async function hacer(result, params) {
         let data = await result.rows;
         if (data.length) {

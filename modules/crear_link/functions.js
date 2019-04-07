@@ -12,7 +12,7 @@ $(document).ready(function () {
         }
 
     }
-    sesion({ href: false });
+    sesion({ href: true });
     $("#frm_crear_link").formValidation(confValidation)
         .on('success.form.fv', function (e) {
             e.preventDefault();

@@ -17,7 +17,7 @@ $(document).ready(async function () {
         await $("[name=titulo]").val(result.rows.titulo).focus();
         await loader("close");
     }
-    sesion({ href: false, loaderStop:true });
+    sesion({ href: true, loaderStop:true });
     $("#frm_editar_link").formValidation(confValidation)
         .on('success.form.fv', function (e) {
             e.preventDefault();

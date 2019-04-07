@@ -1,4 +1,4 @@
-var appName = "Mis Links";
+var appName = "Mis favoritos";
 var confValidation = {
     framework: 'bootstrap',
     excluded: [':disabled', ':hidden', ':not(:visible)'],
@@ -16,6 +16,7 @@ var confValidation = {
 
 let sesion = async function(params) {
     let hacer = function(result) {
+        console.log(params);
         if(result.error > 200){
             if(result.error == 201){
                 if(params.href == true)
@@ -101,7 +102,6 @@ let solicitud = async function (params) {
             loader(params.loader);
         },
         success: function (result) {
-            console.log(!params.loaderStop);
             if(!params.loaderStop){
                 loader("close");
             }
