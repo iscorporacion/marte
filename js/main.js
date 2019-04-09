@@ -1,4 +1,4 @@
-var appName = "Mis Links";
+var appName = "Mis favoritos";
 var confValidation = {
     framework: 'bootstrap',
     excluded: [':disabled', ':hidden', ':not(:visible)'],
@@ -12,27 +12,35 @@ var confValidation = {
         invalid: 'field-error'
     }
 };
-/*
-let sesion = function(params) {
-    console.log(`llamado por ${params.modulo}`);
-    let ejecutar = function(result) {
-        if(result.error == 204){
-            window.location.href = "index.html";
-        }else{
-            $(".usuario").empty().append(`
-                <b>${result.rows.nombre}</b> [${result.rows.email}]
-            `);
+
+
+let sesion = async function(params) {
+    let hacer = function(result) {
+        console.log(params);
+        if(result.error > 200){
+            if(result.error == 201){
+                if(params.href == true)
+                    window.location.href = result.url;
+            }else{
+                if(params.url){
+                    window.location.href = params.url
+                }else{
+                    $(".usuario").empty().append(`
+                        ${result.rows.nombre}
+                    `);
+                }
+            }
         }
     }
-    $.get("modules/login/validarUsuario.php",{},function(result){
-        result['accion'] = ejecutar;
-        errorManager(result);
-    },"json");
-}*/
+    await solicitud({
+        url: "/PHP/validarSesion.php",
+        loader:"Validando usuario...!",
+        ejecutar:hacer,
+        loaderStop: params.loaderStop || false
+    });
+}
 
-let mensaje = function (params,result) {
-    console.log(params);
-    console.log(result);
+let mensaje = function (result,params) {
     let opcions = {
         title: result.title ?  result.title : "",
         buttonsStyling: false,
@@ -50,37 +58,42 @@ let mensaje = function (params,result) {
         var funcion = params.ejecutar || null;
         if (response.value) {
             if (funcion != null)
-                funcion(params,result);
+                funcion(result,params);
         }
     }).catch(swal.noop);
 }
-let errorManager = function (params,result) {
+let errorManager = function (result,params) {
     switch (result.error) {
         case 200:
-            mensaje(params,result);
+            mensaje(result,params);
             break;
         case 201:
             var funcion = params.ejecutar || null;
             if (funcion != null)
-                funcion(result);
+                funcion(result,params);
+            break;
+        case 202:
+            var funcion = params.ejecutar || null;
+            if (funcion != null)
+                funcion(result,params);
             break;
         case 204:
-            mensaje(params,result);
+            mensaje(result);
             break;
         case 500:
-            mensaje(params,result);
+            mensaje(result,params);
             break;
         default:
             mensaje("Error desconocido");
     }
 }
 
-let solicitud = function (params) {
-    $.ajax({
+let solicitud = async function (params) {
+    result = await $.ajax({
         url: params.url,
         type: params.type || "POST",
         dataType: "json",
-        data: params.data,
+        data: params.data || null,
         contentType: false,
         cache: false,
         processData: false,
@@ -89,10 +102,13 @@ let solicitud = function (params) {
             loader(params.loader);
         },
         success: function (result) {
-            loader("close");
-            errorManager(params,result);
+            if(!params.loaderStop){
+                loader("close");
+            }
+            errorManager(result,params);
         }
-    })
+    });
+    return result;
 }
 // no tocar es el loader
 var loader = (msj, funcion, arg) => {
@@ -114,7 +130,7 @@ var loader = (msj, funcion, arg) => {
 (function($){
     $(window).on("load",function(){        
         if($('.page-loader')[0]) {
-            $('.page-loader').fadeOut();
+            // $('.page-loader').fadeOut();
         }
     });
     $(document).ready(function () {
