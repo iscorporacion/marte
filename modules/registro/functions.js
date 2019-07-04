@@ -20,4 +20,4 @@ $("#agregarUsuario").formValidation(confValidation)
             ejecutar:hacer /*quitar si no quiere que ejecute una función después de terminar*/ 
         });
     });
-    sesion({href:true});
+    sesion({href:false});
