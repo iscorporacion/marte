@@ -1,3 +1,3 @@
-$(document).ready(function () {
-    sesion({href:false,"url":"/modules/perfil"});
+$(document).ready(async function () {
+    await sesion({href:false,"url":"/modules/perfil"});
 });

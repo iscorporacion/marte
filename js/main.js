@@ -15,7 +15,7 @@ var confValidation = {
 
 
 let sesion = async function(params) {
-    let hacer = function(result) {
+    let hacer = async function(result) {
         console.log(params);
         if(result.error > 200){
             if(result.error == 201){
