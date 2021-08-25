@@ -17,7 +17,7 @@ $(document).ready(function () {
         .on('success.form.fv', function (e) {
             e.preventDefault();
             solicitud({
-                url: "PHP/create.php",
+                url: "/./modules/crear_link/PHP/create.php",
                 data: new FormData(this),
                 loader: "Guardando link...!",
                 ejecutar: hacer 

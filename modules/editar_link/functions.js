@@ -24,7 +24,7 @@ $(document).ready(async function () {
             let formData = new FormData(this);
             formData.append("id",id);
             solicitud({
-                url: "PHP/update.php",
+                url: "/./modules/editar_link/PHP/update.php",
                 data: formData,
                 loader: "Cargando...!",
                 ejecutar: resetForm
@@ -34,7 +34,7 @@ $(document).ready(async function () {
     let formData = new FormData();
     formData.append("id",id);
     await solicitud({
-        url: "PHP/listarLink.php",
+        url: "/./modules/editar_link/PHP/listarLink.php",
         loader: "Cargando link...!",
         data:formData,
         ejecutar: mostrarLink,

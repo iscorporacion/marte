@@ -1,7 +1,7 @@
 $(document).ready(async function () {
     async function listarLinks(params) {
         await solicitud({
-            url: "PHP/listarLinks.php",
+            url: "/./modules/perfil/PHP/listarLinks.php",
             loader: "Cargando links...!",
             ejecutar: hacer, /*quitar si no quiere que ejecute una función después de terminar*/
             loaderStop:true
@@ -21,7 +21,7 @@ $(document).ready(async function () {
                                 <p class="card-text text-justify">${link.descripcion}</p>
                                 <a href="${link.url}" target="_blank" class="px-2 fa-lg li-ic"><i class="fas fa-share-alt"></i> Ir</a>
                                 <a class="px-2 fa-lg tw-ic pull-right btnDelete" data-id="${link.id}"><i class="fas fa-trash red-text"></i></a>
-                                <a href="../editar_link" class="px-2 fa-lg tw-ic pull-right btnEdit" data-id="${link.id}"><i class="fas fa-edit orange-text"></i></a>
+                                <a href="/./modules/editar_link" class="px-2 fa-lg tw-ic pull-right btnEdit" data-id="${link.id}"><i class="fas fa-edit orange-text"></i></a>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ $(document).ready(async function () {
         let formData = new FormData();
         formData.append("id",id);
         await solicitud({
-            url: "PHP/deleteLinks.php",
+            url: "/./modules/perfil/PHP/deleteLinks.php",
             loader: "Eliminando link...!",
             data:formData,
             ejecutar: listarLinks, /*quitar si no quiere que ejecute una función después de terminar*/
